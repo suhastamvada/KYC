@@ -18,7 +18,7 @@ Something bothering you? Don't stop the converation after chai-sutta. Convert th
 
 ## Disclaimers:
 - This is not a grievance platform. Most of us are tired of expressing our grievances. Show up with a proposed solution and you will be taken seriously.
-- I understand that I’m not starting off with a perfect solution. I know the methods will be critiqued. We (you and me) will make mistakes along the way. But we will be quick to fix it.
+- I understand that I’m not starting off with a perfect solution. I know the methods will be critiqued. We (you and me) will make mistakes along the way. But we will be quick to fix them.
 
 ## Why am I doing this?
 - People close to me have expressed their angst and distress. I see the pain in them but I know they have no better tools than to feel anger.
