@@ -6,15 +6,9 @@ government-appointed expert committee, and the Public Examinations
 India conducts high-stakes national examinations. This chapter consolidates
 reforms addressing them.
 
-> Maintainer note: the three sections below are **[Seed]** entries, placed at
-> launch to demonstrate the format. They draw on directions publicly discussed
-> in the NTA expert committee (Radhakrishnan committee) process and subsequent
-> reporting. **Each still needs precise citations** — strengthening the
-> sourcing of these seeds is itself a welcome first contribution.
-
 ---
 
-## 1.1 Transition NEET-UG to secure computer-based testing [Seed]
+## 1.1 Transition NEET-UG to secure computer-based testing
 
 **Problem.** A single-day, pen-and-paper exam for 2M+ candidates requires
 printing and physically transporting question papers to thousands of centres,
@@ -42,7 +36,7 @@ state health-education departments.
 
 ---
 
-## 1.2 Independent security audit and public incident reporting for the NTA [Seed]
+## 1.2 Independent security audit and public incident reporting for the NTA
 
 **Problem.** The agency that conducts the exam also investigates and reports
 on its own failures, so the public learns of breaches through leaks and
@@ -67,7 +61,7 @@ cost and administrative load to every cycle.
 
 ---
 
-## 1.3 Reduce single-attempt stakes via score portability [Seed]
+## 1.3 Reduce single-attempt stakes via score portability
 
 **Problem.** A single annual attempt concentrates catastrophic stakes on one
 day, which fuels both the coaching arms race and the incentive to cheat: the
@@ -90,5 +84,5 @@ authorities (timeline compression).
 
 ---
 
-*To propose a new section or amend these, open a proposal:
-see [CONTRIBUTING.md](../CONTRIBUTING.md).*
+*To propose a new section or amend these,
+[open a proposal](https://github.com/suhastamvada/KYC/discussions/new?category=proposals).*

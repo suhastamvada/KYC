@@ -125,7 +125,7 @@
 
   <section id="draft">
     <h2 class="sec">The Draft</h2>
-    <p class="sec-sub">The consolidated document. Sections marked [Seed] were placed at launch to demonstrate format and carry no special status.</p>
+    <p class="sec-sub">The consolidated document, amended monthly.</p>
     <div id="draft-body"><div class="empty">Loading draft…</div></div>
   </section>
 
@@ -136,17 +136,17 @@
     affected parties. The community votes and argues in public. Once a month,
     proposals with sustained support and no unaddressed factual objections are
     merged into the Draft under published
-    <a id="link-gov" href="#">governance rules</a>, with every decision logged
-    in a <a id="link-log" href="#">changelog</a>. Vote counts inform merges;
-    they never automate them.</p>
+    <a href="governance.html" target="_blank" rel="noopener">governance rules</a>,
+    with every decision logged in a
+    <a href="governance.html#changelog" target="_blank" rel="noopener">changelog</a>.
+    Vote counts inform merges; they never automate them.</p>
   </section>
 </div>
 
 <footer>
   <div class="wrap">
     Draft content CC BY 4.0 · Site &amp; workflows MIT ·
-    <a id="link-conduct" href="#">Code of conduct</a> ·
-    <a id="link-contrib" href="#">Contributing</a>
+    <a href="governance.html" target="_blank" rel="noopener">Governance &amp; changelog</a>
   </div>
 </footer>
 
@@ -160,10 +160,7 @@ const RAW = `https://raw.githubusercontent.com/${REPO}/${BRANCH}`;
 const HUB = `https://github.com/${REPO}`;
 
 for (const [id, path] of Object.entries({
-  "repo-link": "", "link-gov": "/blob/main/GOVERNANCE.md",
-  "link-log": "/blob/main/CHANGELOG.md",
-  "link-conduct": "/blob/main/CODE_OF_CONDUCT.md",
-  "link-contrib": "/blob/main/CONTRIBUTING.md",
+  "repo-link": "",
   "link-propose": "/discussions/new?category=proposals",
 })) document.getElementById(id).href = HUB + path;
 

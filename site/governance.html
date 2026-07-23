@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Governance — KYC · Know Your Citizen</title>
+<meta name="description" content="The published rules by which proposals become part of the KYC draft, and the changelog of every decision.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:wght@500;600;700&family=Public+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.2/marked.min.js"></script>
+<style>
+  :root{
+    --paper:#FAF7F0; --ink:#1C2333; --rule:#DCD5C4; --omr:#C43A5B;
+    --marigold:#B87A17; --muted:#6E7280; --card:#FFFFFF;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0; background:var(--paper); color:var(--ink);
+    font-family:"Public Sans",system-ui,sans-serif; font-size:16px; line-height:1.65;
+  }
+  a{color:var(--omr); text-decoration-thickness:1px; text-underline-offset:2px}
+  a:focus-visible{outline:2px solid var(--omr); outline-offset:2px}
+  .wrap{max-width:960px; margin:0 auto; padding:0 20px}
+
+  header{border-bottom:1px solid var(--ink)}
+  .mast{padding:30px 0 20px; text-align:center; border-bottom:4px double var(--ink)}
+  .mast .kicker{font-family:"IBM Plex Mono",monospace; font-size:12px;
+    letter-spacing:.14em; text-transform:uppercase; color:var(--muted)}
+  .mast h1{font-family:Spectral,serif; font-weight:700; font-size:clamp(26px,5vw,40px);
+    margin:10px 0 8px; line-height:1.1}
+  .mast .stamp{font-family:"IBM Plex Mono",monospace; font-size:13px; color:var(--ink)}
+  nav{display:flex; gap:22px; justify-content:center; padding:12px 0;
+    font-family:"IBM Plex Mono",monospace; font-size:13px; letter-spacing:.06em;
+    text-transform:uppercase}
+  nav a{color:var(--ink); text-decoration:none; border-bottom:2px solid transparent; padding-bottom:2px}
+  nav a:hover{border-color:var(--omr)}
+
+  section{padding:40px 0 8px}
+  h2.sec{font-family:Spectral,serif; font-weight:600; font-size:26px; margin:0 0 4px}
+  .sec-sub{color:var(--muted); font-size:14px; margin:0 0 24px}
+
+  .draft-doc{background:var(--card); border:1px solid var(--rule); border-radius:6px;
+    padding:28px clamp(18px,4vw,44px); margin-bottom:18px}
+  .draft-doc h1{font-family:Spectral,serif; font-size:26px; border-bottom:1px solid var(--rule); padding-bottom:10px}
+  .draft-doc h2{font-family:Spectral,serif; font-size:20px; margin-top:34px}
+  .draft-doc blockquote{border-left:3px solid var(--marigold); margin:16px 0; padding:2px 16px; color:var(--muted); font-size:15px}
+  .draft-doc code{font-family:"IBM Plex Mono",monospace; font-size:14px; background:var(--paper); padding:1px 5px; border-radius:3px}
+  .draft-doc hr{border:none; border-top:1px solid var(--rule); margin:28px 0}
+  .empty{border:1.5px dashed var(--rule); border-radius:6px; padding:26px 20px;
+    color:var(--muted); font-size:15px; background:transparent}
+
+  footer{border-top:4px double var(--ink); margin-top:56px; padding:22px 0 40px;
+    font-size:13px; color:var(--muted); text-align:center}
+  footer a{color:var(--muted)}
+
+  @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto} }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="mast">
+      <div class="kicker">Know Your Citizen · A public record</div>
+      <h1>Governance</h1>
+      <div class="stamp">How proposals become part of the Draft — published rules, logged decisions</div>
+    </div>
+    <nav aria-label="Sections">
+      <a href="index.html">← Home</a>
+      <a href="#rules">The rules</a>
+      <a href="#changelog">Changelog</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap">
+  <section id="rules">
+    <h2 class="sec">The rules</h2>
+    <p class="sec-sub">Published before launch so they cannot change mid-game without a visible commit.</p>
+    <div id="gov-body"><div class="empty">Loading…</div></div>
+  </section>
+
+  <section id="changelog">
+    <h2 class="sec">Changelog</h2>
+    <p class="sec-sub">Every merge, deferral, closure, and rule change, with reasoning.</p>
+    <div id="log-body"><div class="empty">Loading…</div></div>
+  </section>
+</div>
+
+<footer>
+  <div class="wrap">
+    Draft content CC BY 4.0 · Site &amp; workflows MIT ·
+    <a href="index.html">KYC home</a>
+  </div>
+</footer>
+
+<script>
+const REPO = "suhastamvada/KYC";
+const BRANCH = "main";
+const RAW = `https://raw.githubusercontent.com/${REPO}/${BRANCH}`;
+const HUB = `https://github.com/${REPO}`;
+
+async function render(id, file) {
+  const el = document.getElementById(id);
+  try {
+    const r = await fetch(`${RAW}/${file}`, { cache: "no-store" });
+    if (!r.ok) throw new Error(r.status);
+    let md = await r.text();
+    md = md.replace(/^#\s.*\n/, "");   // drop the file's H1; the page provides the heading
+    el.innerHTML = `<div class="draft-doc">${marked.parse(md)}</div>`;
+  } catch (e) {
+    el.innerHTML = `<div class="empty">Couldn't load this right now — read it
+      directly in the <a href="${HUB}/blob/main/${file}">repository</a>.</div>`;
+  }
+}
+
+render("gov-body", "GOVERNANCE.md");
+render("log-body", "CHANGELOG.md");
+</script>
+</body>
+</html>

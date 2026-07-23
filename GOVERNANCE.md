@@ -18,7 +18,7 @@ before launch so the rules cannot be changed mid-game without a visible commit.
 On the **first weekend of each month**, the maintainer reviews all proposals
 that meet the eligibility bar and either merges them into the draft, defers
 them with a stated reason, or closes them with a stated reason. Every decision
-is logged in [CHANGELOG.md](./CHANGELOG.md).
+is logged in the [changelog](#changelog).
 
 ## Merge criteria
 
