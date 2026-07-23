@@ -1,4 +1,15 @@
 {
-  "generatedAt": null,
-  "proposals": []
+  "generatedAt": "2026-07-23T04:16:06.243Z",
+  "proposals": [
+    {
+      "title": "Computer based tests (CBT)",
+      "url": "https://github.com/suhastamvada/KYC/discussions/1",
+      "number": 1,
+      "createdAt": "2026-07-23T03:43:27Z",
+      "comments": 0,
+      "up": 0,
+      "down": 0,
+      "net": 0
+    }
+  ]
 }
