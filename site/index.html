@@ -96,7 +96,7 @@
       <div class="stamp" id="stamp">Version <b>0.1</b> · Living draft · Amended monthly</div>
     </div>
     <nav aria-label="Sections">
-      <a href="#why">Why</a>
+      <a href="#manifesto">Manifesto</a>
       <a href="#proposals">Proposals</a>
       <a href="#draft">The Draft</a>
       <a href="#how">How it works</a>
@@ -109,9 +109,9 @@
   Every vote, merge, and rule is public and auditable on
   <a id="repo-link" href="#">GitHub</a>.</p>
 
-  <section id="why">
-    <h2 class="sec">Why</h2>
-    <div id="manifesto"><div class="empty">Loading…</div></div>
+  <section id="manifesto">
+    <h2 class="sec">Manifesto</h2>
+    <div id="manifesto-body"><div class="empty">Loading…</div></div>
   </section>
 
   <section id="proposals">
@@ -237,7 +237,7 @@ function escapeHtml(s) {
 }
 
 async function loadManifesto() {
-  const el = document.getElementById("manifesto");
+  const el = document.getElementById("manifesto-body");
   try {
     const r = await fetch(`${RAW}/MANIFESTO.md`, { cache: "no-store" });
     if (!r.ok) throw new Error(r.status);

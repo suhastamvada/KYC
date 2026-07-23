@@ -1,4 +1,3 @@
-# Manifesto
 India is a country of misplaced anger. The policeman is not hitting the children because he is in moral or philosophical agreement with the government. He is redirecting the frustration he has towards his wife/kids/neighbor onto the less powerful entities before him.
 The students are flocking to the protest not because they are interested in the power move of ousting a minister. Ousting a minister is a good massage to the ego, but the problem is deeper. They are angry. But they don’t know what to direct their anger towards. They need a cause and they have found this.
 
