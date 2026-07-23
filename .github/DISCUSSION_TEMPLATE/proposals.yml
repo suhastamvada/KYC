@@ -1,0 +1,43 @@
+title: "[Proposal] "
+labels: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Proposals must follow this structure to be eligible for merging.
+        See CONTRIBUTING.md for guidance. Vote with 👍 / 👎 reactions.
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What specifically is broken? Scope it tightly.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence
+      description: Sources — reports, data, court records, credible journalism. Unsourced claims block merging.
+    validations:
+      required: true
+  - type: textarea
+    id: reform
+    attributes:
+      label: Proposed reform
+      description: The concrete change — what rule, structure, process, or resource changes, and who implements it.
+    validations:
+      required: true
+  - type: textarea
+    id: tradeoffs
+    attributes:
+      label: Tradeoffs and risks
+      description: What this costs, who bears it, what could go wrong.
+    validations:
+      required: true
+  - type: textarea
+    id: affected
+    attributes:
+      label: Affected parties
+      description: Who is touched and how.
+    validations:
+      required: true

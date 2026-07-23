@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KYC — Know Your Citizen · India education reforms, drafted in public</title>
+<meta name="description" content="An open, version-controlled, citizen-drafted document of proposed reforms to India's education system. Read the draft, vote on proposals.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:wght@500;600;700&family=Public+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.2/marked.min.js"></script>
+<style>
+  :root{
+    --paper:#FAF7F0; --ink:#1C2333; --rule:#DCD5C4; --omr:#C43A5B;
+    --marigold:#B87A17; --muted:#6E7280; --card:#FFFFFF;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0; background:var(--paper); color:var(--ink);
+    font-family:"Public Sans",system-ui,sans-serif; font-size:16px; line-height:1.65;
+  }
+  a{color:var(--omr); text-decoration-thickness:1px; text-underline-offset:2px}
+  a:focus-visible,button:focus-visible{outline:2px solid var(--omr); outline-offset:2px}
+  .wrap{max-width:960px; margin:0 auto; padding:0 20px}
+
+  /* Masthead — gazette */
+  header{border-bottom:1px solid var(--ink); margin-bottom:0}
+  .mast{padding:34px 0 22px; text-align:center;
+    border-bottom:4px double var(--ink)}
+  .mast .kicker{font-family:"IBM Plex Mono",monospace; font-size:12px;
+    letter-spacing:.14em; text-transform:uppercase; color:var(--muted)}
+  .mast h1{font-family:Spectral,serif; font-weight:700; font-size:clamp(30px,6vw,52px);
+    margin:10px 0 8px; line-height:1.1}
+  .mast .stamp{font-family:"IBM Plex Mono",monospace; font-size:13px; color:var(--ink)}
+  .mast .stamp b{color:var(--omr); font-weight:500}
+  .notice{font-size:13px; color:var(--muted); padding:8px 0 26px; text-align:center}
+
+  nav{display:flex; gap:22px; justify-content:center; padding:12px 0;
+    font-family:"IBM Plex Mono",monospace; font-size:13px; letter-spacing:.06em;
+    text-transform:uppercase}
+  nav a{color:var(--ink); text-decoration:none; border-bottom:2px solid transparent; padding-bottom:2px}
+  nav a:hover{border-color:var(--omr)}
+
+  section{padding:44px 0 8px}
+  h2.sec{font-family:Spectral,serif; font-weight:600; font-size:26px; margin:0 0 4px}
+  .sec-sub{color:var(--muted); font-size:14px; margin:0 0 24px}
+
+  /* Proposals */
+  .prop{background:var(--card); border:1px solid var(--rule); border-radius:6px;
+    padding:18px 20px; margin-bottom:14px}
+  .prop h3{font-family:Spectral,serif; font-size:18px; font-weight:600; margin:0 0 6px; line-height:1.35}
+  .prop h3 a{color:var(--ink); text-decoration:none}
+  .prop h3 a:hover{color:var(--omr)}
+  .prop .meta{font-family:"IBM Plex Mono",monospace; font-size:12px; color:var(--muted); margin-bottom:12px}
+  .tallyrow{display:flex; align-items:center; gap:14px; flex-wrap:wrap}
+  .omr{display:flex; gap:6px}
+  .omr span{width:15px; height:15px; border-radius:50%; border:1.5px solid var(--ink);
+    display:inline-block; background:transparent; transition:background .5s ease}
+  .omr span.fill{background:var(--omr); border-color:var(--omr)}
+  .omr span.neg{border-style:dashed; border-color:var(--muted)}
+  .net{font-family:"IBM Plex Mono",monospace; font-size:14px}
+  .net b{color:var(--omr); font-weight:500}
+  .vote-link{margin-left:auto; font-size:14px}
+  .empty{border:1.5px dashed var(--rule); border-radius:6px; padding:26px 20px;
+    color:var(--muted); font-size:15px; background:transparent}
+  .updated{font-family:"IBM Plex Mono",monospace; font-size:12px; color:var(--muted); margin-top:10px}
+
+  /* Draft */
+  .draft-doc{background:var(--card); border:1px solid var(--rule); border-radius:6px;
+    padding:28px clamp(18px,4vw,44px); margin-bottom:18px}
+  .draft-doc h1{font-family:Spectral,serif; font-size:26px; border-bottom:1px solid var(--rule); padding-bottom:10px}
+  .draft-doc h2{font-family:Spectral,serif; font-size:20px; margin-top:34px}
+  .draft-doc blockquote{border-left:3px solid var(--marigold); margin:16px 0; padding:2px 16px; color:var(--muted); font-size:15px}
+  .draft-doc code{font-family:"IBM Plex Mono",monospace; font-size:14px; background:var(--paper); padding:1px 5px; border-radius:3px}
+  .draft-doc hr{border:none; border-top:1px solid var(--rule); margin:28px 0}
+
+  footer{border-top:4px double var(--ink); margin-top:56px; padding:22px 0 40px;
+    font-size:13px; color:var(--muted); text-align:center}
+  footer a{color:var(--muted)}
+
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto}
+    .omr span{transition:none}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="mast">
+      <div class="kicker">Know Your Citizen · A public record</div>
+      <h1>KYC</h1>
+      <div class="stamp" style="margin-bottom:6px">India’s education reforms, drafted in public</div>
+      <div class="stamp" id="stamp">Version <b>0.1</b> · Living draft · Amended monthly</div>
+    </div>
+    <nav aria-label="Sections">
+      <a href="#why">Why</a>
+      <a href="#proposals">Proposals</a>
+      <a href="#draft">The Draft</a>
+      <a href="#how">How it works</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap">
+  <p class="notice">Not affiliated with any government body or political party.
+  Every vote, merge, and rule is public and auditable on
+  <a id="repo-link" href="#">GitHub</a>.</p>
+
+  <section id="why">
+    <h2 class="sec">Why</h2>
+    <div id="manifesto"><div class="empty">Loading…</div></div>
+  </section>
+
+  <section id="proposals">
+    <h2 class="sec">Open proposals</h2>
+    <p class="sec-sub">Ranked by net support (👍 − 👎). Voting happens on GitHub — one account, one vote, publicly attributable.</p>
+    <div id="prop-list" aria-live="polite">
+      <div class="empty">Loading proposals…</div>
+    </div>
+    <div class="updated" id="updated"></div>
+  </section>
+
+  <section id="draft">
+    <h2 class="sec">The Draft</h2>
+    <p class="sec-sub">The consolidated document. Sections marked [Seed] were placed at launch to demonstrate format and carry no special status.</p>
+    <div id="draft-body"><div class="empty">Loading draft…</div></div>
+  </section>
+
+  <section id="how">
+    <h2 class="sec">How it works</h2>
+    <p>Anyone can <a id="link-propose" href="#">submit a proposal</a> using a
+    required structure: problem, evidence, proposed reform, tradeoffs, and
+    affected parties. The community votes and argues in public. Once a month,
+    proposals with sustained support and no unaddressed factual objections are
+    merged into the Draft under published
+    <a id="link-gov" href="#">governance rules</a>, with every decision logged
+    in a <a id="link-log" href="#">changelog</a>. Vote counts inform merges;
+    they never automate them.</p>
+  </section>
+</div>
+
+<footer>
+  <div class="wrap">
+    Draft content CC BY 4.0 · Site &amp; workflows MIT ·
+    <a id="link-conduct" href="#">Code of conduct</a> ·
+    <a id="link-contrib" href="#">Contributing</a>
+  </div>
+</footer>
+
+<script>
+/* ── Edit this one line after creating your repo ─────────────────── */
+const REPO = "suhastamvada/KYC";
+const BRANCH = "main";
+/* ────────────────────────────────────────────────────────────────── */
+
+const RAW = `https://raw.githubusercontent.com/${REPO}/${BRANCH}`;
+const HUB = `https://github.com/${REPO}`;
+
+for (const [id, path] of Object.entries({
+  "repo-link": "", "link-gov": "/blob/main/GOVERNANCE.md",
+  "link-log": "/blob/main/CHANGELOG.md",
+  "link-conduct": "/blob/main/CODE_OF_CONDUCT.md",
+  "link-contrib": "/blob/main/CONTRIBUTING.md",
+  "link-propose": "/discussions/new?category=proposals",
+})) document.getElementById(id).href = HUB + path;
+
+function omrStrip(up, down) {
+  const total = 10;
+  const ratio = (up + down) === 0 ? 0 : up / (up + down);
+  const filled = Math.round(ratio * total);
+  let html = '<div class="omr" role="img" aria-label="' + up + ' for, ' + down + ' against">';
+  for (let i = 0; i < total; i++)
+    html += `<span class="${i < filled ? "fill" : (up + down === 0 ? "neg" : "")}"></span>`;
+  return html + "</div>";
+}
+
+async function loadProposals() {
+  const list = document.getElementById("prop-list");
+  try {
+    const res = await fetch(`${RAW}/data/proposals.json`, { cache: "no-store" });
+    if (!res.ok) throw new Error(res.status);
+    const data = await res.json();
+    if (!data.proposals || data.proposals.length === 0) {
+      list.innerHTML = `<div class="empty">No open proposals yet.
+        <a href="${HUB}/discussions/new?category=proposals">Submit the first one</a> —
+        the template walks you through it.</div>`;
+      return;
+    }
+    list.innerHTML = data.proposals.map(p => `
+      <article class="prop">
+        <h3><a href="${p.url}">${escapeHtml(p.title)}</a></h3>
+        <div class="meta">#${p.number} · ${p.comments} comment${p.comments === 1 ? "" : "s"} · opened ${new Date(p.createdAt).toLocaleDateString("en-IN", {day:"numeric",month:"short",year:"numeric"})}</div>
+        <div class="tallyrow">
+          ${omrStrip(p.up, p.down)}
+          <span class="net"><b>${p.net >= 0 ? "+" + p.net : p.net}</b> net (${p.up} 👍 / ${p.down} 👎)</span>
+          <a class="vote-link" href="${p.url}">Vote &amp; discuss →</a>
+        </div>
+      </article>`).join("");
+    if (data.generatedAt)
+      document.getElementById("updated").textContent =
+        "Tally updated " + new Date(data.generatedAt).toLocaleString("en-IN");
+  } catch (e) {
+    list.innerHTML = `<div class="empty">Couldn't load the tally right now.
+      Proposals are always available directly on
+      <a href="${HUB}/discussions/categories/proposals">GitHub Discussions</a>.</div>`;
+  }
+}
+
+const DRAFT_FILES_FALLBACK = ["00-preamble.md", "01-exam-integrity.md"];
+
+async function loadDraft() {
+  const body = document.getElementById("draft-body");
+  let files = DRAFT_FILES_FALLBACK;
+  try {
+    const res = await fetch(`https://api.github.com/repos/${REPO}/contents/draft?ref=${BRANCH}`);
+    if (res.ok) {
+      const items = await res.json();
+      files = items.filter(i => i.name.endsWith(".md")).map(i => i.name).sort();
+    }
+  } catch (e) { /* fall back to hardcoded list */ }
+  try {
+    const parts = await Promise.all(files.map(async f => {
+      const r = await fetch(`${RAW}/draft/${f}`, { cache: "no-store" });
+      return r.ok ? r.text() : "";
+    }));
+    const md = parts.filter(Boolean).join("\n\n---\n\n");
+    if (!md) throw new Error("empty");
+    body.innerHTML = `<div class="draft-doc">${marked.parse(md)}</div>`;
+  } catch (e) {
+    body.innerHTML = `<div class="empty">Couldn't load the draft here — read it
+      directly in the <a href="${HUB}/tree/main/draft">repository</a>.</div>`;
+  }
+}
+
+function escapeHtml(s) {
+  return s.replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+}
+
+async function loadManifesto() {
+  const el = document.getElementById("manifesto");
+  try {
+    const r = await fetch(`${RAW}/MANIFESTO.md`, { cache: "no-store" });
+    if (!r.ok) throw new Error(r.status);
+    el.innerHTML = `<div class="draft-doc">${marked.parse(await r.text())}</div>`;
+  } catch (e) {
+    el.innerHTML = `<div class="empty">Read the manifesto in the <a href="${HUB}/blob/main/MANIFESTO.md">repository</a>.</div>`;
+  }
+}
+
+loadManifesto();
+loadProposals();
+loadDraft();
+</script>
+</body>
+</html>
