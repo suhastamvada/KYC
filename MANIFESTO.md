@@ -1,7 +1,7 @@
 India is a country of misplaced anger. The policeman is not hitting the children because he is in moral or philosophical agreement with the government. He is redirecting the frustration he has towards his wife/kids/neighbor onto the less powerful entities before him.
 The students are flocking to the protest not because they are interested in the power move of ousting a minister. Ousting a minister is a good massage to the ego, but the problem is deeper. They are angry. But they don’t know what to direct their anger towards. They need a cause and they have found this.
 
-Although my statements are provocative, my intention is not to provoke. They are simply my observations of human proclivities.
+Although my statements are provocative, my intention is not to provoke. They are simply my observation of human proclivities.
 
 **Let me be clear**: I am not a fan of activism or symbolism. I understand it has its place in society, but I see it as wasted energy. Being loud can grab attention, but it rarely ever results in true change. The activists might gain political clout tomorrow but the lawyers who will patiently fight the cases in courts spanning multiple years will never be recognized. The paralegal painstakingly assembling the evidence so the star lawyer can flamboyantly make their statements in court will never be known.
 
